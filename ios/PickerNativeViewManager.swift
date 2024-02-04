@@ -14,6 +14,9 @@ class PickerNativeView: UIView {
 
     let button = UIButton()
 
+    @objc var onSelect: RCTDirectEventBlock?
+
+
     @objc var title: String = "" {
         didSet {
             print("897929", title)
@@ -21,6 +24,11 @@ class PickerNativeView: UIView {
         }
     }
 
+    @objc var options: [String] = [] {
+        didSet {
+            showMenu()
+        }
+    }
 
     override init(frame: CGRect) {
       super.init(frame: frame)
@@ -36,6 +44,7 @@ class PickerNativeView: UIView {
     func initialize() {
         button.setTitle("", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(button)
         NSLayoutConstraint.activate([
             button.topAnchor.constraint(equalTo: self.topAnchor),
             button.bottomAnchor.constraint(equalTo: self.bottomAnchor),
@@ -44,23 +53,19 @@ class PickerNativeView: UIView {
 
         ])
         button.backgroundColor = .blue
-        self.addSubview(button)
 
     }
 
 
     func showMenu() {
-        let topActions = [
-            UIAction(title: "Two", handler: { (_) in
-            }),
-            UIAction(title: "One", handler: { (_) in
+        var index = -1;
+        let actions = self.options.map({ string in
+            index += 1
+            return   UIAction(title: string, handler: { (_) in
+                self.onSelect!(["index": index,"title": string])
             })
-        ]
-        let divider = UIMenu(title: "", options: .displayInline, children: topActions)
-        let bottomAction = UIAction(title: "Three", handler: { (_) in
         })
-        let items = [bottomAction, divider]
-        let menu = UIMenu(title: title, children: items)
+        let menu = UIMenu(title: title, children: actions)
         button.menu = menu
         button.showsMenuAsPrimaryAction = true
     }

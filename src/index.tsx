@@ -5,6 +5,7 @@ import {
   Platform,
   StyleSheet,
   type ViewStyle,
+  type StyleProp,
 } from 'react-native';
 
 const LINKING_ERROR =
@@ -14,9 +15,15 @@ const LINKING_ERROR =
   '- You are not using Expo Go\n';
 
 type PickerNativeProps = {
-  style: ViewStyle;
+  style: StyleProp<ViewStyle>;
   title: string;
-  options: string[];
+  options: (string | null)[];
+  onSelect: (e: {
+    nativeEvent: {
+      index: number;
+      title: string;
+    };
+  }) => void;
 };
 
 const ComponentName = 'PickerNativeView';
@@ -29,8 +36,15 @@ const PickerNative =
       };
 
 export const PickerNativeView = (props: PickerNativeProps) => {
-  const { style } = props;
-  return <PickerNative style={[style, styles.box]} title={'Sample Title'} />;
+  const { style, title, options, onSelect } = props;
+  return (
+    <PickerNative
+      style={[style, styles.box]}
+      title={title}
+      options={options}
+      onSelect={onSelect}
+    />
+  );
 };
 
 const styles = StyleSheet.create({

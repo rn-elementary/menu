@@ -10,7 +10,23 @@ export default function App() {
         style={styles.container}
         onPress={() => console.log('Hello from PickerNativeView')}
       >
-        <PickerNativeView />
+        <PickerNativeView
+          title={'Sample Title'}
+          options={[
+            'One',
+            'Two',
+            'Four',
+            'Five',
+            'Six',
+            'Seven',
+            'Eight',
+            'Nine',
+            'Ten',
+          ]}
+          onSelect={(e) => {
+            console.log(e.nativeEvent);
+          }}
+        />
         <Text>CLICK ME</Text>
       </TouchableOpacity>
     </View>
