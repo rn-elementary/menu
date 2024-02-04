@@ -24,7 +24,8 @@ export default function App() {
             'Ten',
           ]}
           onSelect={(e) => {
-            console.log(e.nativeEvent);
+            console.log(e.nativeEvent.index);
+            console.log(e.nativeEvent.title);
           }}
         />
         <Text>CLICK ME</Text>
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'red',
+    backgroundColor: 'purple',
   },
   box: {
     height: 100,

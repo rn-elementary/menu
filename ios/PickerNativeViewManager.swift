@@ -62,7 +62,9 @@ class PickerNativeView: UIView {
         let actions = self.options.map({ string in
             index += 1
             return   UIAction(title: string, handler: { (_) in
+            if self.onSelect != nil {
                 self.onSelect!(["index": index,"title": string])
+            }
             })
         })
         let menu = UIMenu(title: title, children: actions)
