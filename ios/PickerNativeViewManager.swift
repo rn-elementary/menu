@@ -6,31 +6,62 @@ class PickerNativeViewManager: RCTViewManager {
   }
 
   @objc override static func requiresMainQueueSetup() -> Bool {
-    return false
+    return true
   }
 }
 
-class PickerNativeView : UIView {
+class PickerNativeView: UIView {
 
-  @objc var color: String = "" {
-    didSet {
-      self.backgroundColor = hexStringToUIColor(hexColor: color)
+    let button = UIButton()
+
+    @objc var title: String = "" {
+        didSet {
+            print("897929", title)
+            showMenu()
+        }
     }
-  }
 
-  func hexStringToUIColor(hexColor: String) -> UIColor {
-    let stringScanner = Scanner(string: hexColor)
 
-    if(hexColor.hasPrefix("#")) {
-      stringScanner.scanLocation = 1
+    override init(frame: CGRect) {
+      super.init(frame: frame)
+        initialize()
     }
-    var color: UInt32 = 0
-    stringScanner.scanHexInt32(&color)
 
-    let r = CGFloat(Int(color >> 16) & 0x000000FF)
-    let g = CGFloat(Int(color >> 8) & 0x000000FF)
-    let b = CGFloat(Int(color) & 0x000000FF)
+    required init?(coder: NSCoder) {
+      super.init(coder: coder)
+        initialize()
 
-    return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1)
-  }
+    }
+
+    func initialize() {
+        button.setTitle("", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.topAnchor.constraint(equalTo: self.topAnchor),
+            button.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            button.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            button.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+
+        ])
+        button.backgroundColor = .blue
+        self.addSubview(button)
+
+    }
+
+
+    func showMenu() {
+        let topActions = [
+            UIAction(title: "Two", handler: { (_) in
+            }),
+            UIAction(title: "One", handler: { (_) in
+            })
+        ]
+        let divider = UIMenu(title: "", options: .displayInline, children: topActions)
+        let bottomAction = UIAction(title: "Three", handler: { (_) in
+        })
+        let items = [bottomAction, divider]
+        let menu = UIMenu(title: title, children: items)
+        button.menu = menu
+        button.showsMenuAsPrimaryAction = true
+    }
 }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:PickerNativeExample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <Group
+      location = "group:Pods"
+      name = "Targets Support Files">
+      <Group
+         location = "group:Pods/Target Support Files/Pods-PickerNativeExample"
+         name = "Pods-PickerNativeExample">
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample/Pods-PickerNativeExample.modulemap">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample/Pods-PickerNativeExample-acknowledgements.markdown">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample/Pods-PickerNativeExample-acknowledgements.plist">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample/Pods-PickerNativeExample-dummy.m">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample/Pods-PickerNativeExample-frameworks.sh">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample/Pods-PickerNativeExample-resources.sh">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample/Pods-PickerNativeExample-umbrella.h">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample/Pods-PickerNativeExample.debug.xcconfig">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample/Pods-PickerNativeExample.release.xcconfig">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Pods/Target Support Files/Pods-PickerNativeExample-PickerNativeExampleTests"
+         name = "Pods-PickerNativeExample-PickerNativeExampleTests">
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample-PickerNativeExampleTests/Pods-PickerNativeExample-PickerNativeExampleTests.modulemap">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample-PickerNativeExampleTests/Pods-PickerNativeExample-PickerNativeExampleTests-acknowledgements.markdown">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample-PickerNativeExampleTests/Pods-PickerNativeExample-PickerNativeExampleTests-acknowledgements.plist">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample-PickerNativeExampleTests/Pods-PickerNativeExample-PickerNativeExampleTests-dummy.m">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample-PickerNativeExampleTests/Pods-PickerNativeExample-PickerNativeExampleTests-frameworks.sh">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample-PickerNativeExampleTests/Pods-PickerNativeExample-PickerNativeExampleTests-resources.sh">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample-PickerNativeExampleTests/Pods-PickerNativeExample-PickerNativeExampleTests-umbrella.h">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample-PickerNativeExampleTests/Pods-PickerNativeExample-PickerNativeExampleTests.debug.xcconfig">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-PickerNativeExample-PickerNativeExampleTests/Pods-PickerNativeExample-PickerNativeExampleTests.release.xcconfig">
+         </FileRef>
+      </Group>
+   </Group>
+</Workspace>
