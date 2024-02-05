@@ -27,7 +27,7 @@ end
 
 target 'PickerNativeExample' do
   config = use_native_modules!
-  pod 'glog', :modular_headers => true # Might need to add this to your project
+  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec', :modular_headers => true
   use_react_native!(
     :path => config[:reactNativePath],
     # Enables Flipper.

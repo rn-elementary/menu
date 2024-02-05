@@ -17,7 +17,14 @@ type PickerProps = {
 };
 
 export const PickerNativeView = (props: PickerProps) => {
-  const { style, title, options, onSelect, children, layout } = props;
+  const {
+    style,
+    title = '',
+    options = [],
+    onSelect = () => {},
+    children,
+    layout,
+  } = props;
 
   return (
     <>
