@@ -1,4 +1,4 @@
-# react-native-picker-native
+# menu
 
 Creates native picker in UIKit and Kotlin.
 
