@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "react-native-picker-native": ["./src/index"]
+      "@rn-elementary/menu": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

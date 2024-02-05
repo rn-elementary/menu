@@ -1,15 +1,18 @@
 {
-  "name": "react-native-picker-native",
+  "name": "@rn-elementary/menu",
   "version": "0.1.0",
   "description": "Creates native picker in Swift UI and JetPack Compose",
-  "main": "lib/commonjs/index",
-  "module": "lib/module/index",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
   "types": "lib/typescript/src/index.d.ts",
-  "react-native": "src/index",
-  "source": "src/index",
+  "react-native": "src/index.tsx",
+  "source": "src/index.tsx",
   "files": [
     "src",
     "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
     "android",
     "ios",
     "cpp",
@@ -20,9 +23,6 @@
     "!android/gradlew",
     "!android/gradlew.bat",
     "!android/local.properties",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__",
     "!**/.*"
   ],
   "scripts": {
@@ -41,14 +41,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShivamRawat0l/react-native-picker-native.git"
+    "url": "git+https://github.com/rn-elementary/menu.git"
   },
   "author": "Shivam Rawat <shivamrawat6670@gmail.com> (https://github.com/ShivamRawat0l)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ShivamRawat0l/react-native-picker-native/issues"
+    "url": "https://github.com/rn-elementary/menu/issues"
   },
-  "homepage": "https://github.com/ShivamRawat0l/react-native-picker-native#readme",
+  "homepage": "https://github.com/rn-elementary/menu#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -70,7 +70,7 @@
     "prettier": "^2.0.5",
     "react": "18.2.0",
     "react-native": "0.73.3",
-    "react-native-builder-bob": "^0.20.0",
+    "react-native-builder-bob": "^0.23.2",
     "release-it": "^15.0.0",
     "turbo": "^1.10.7",
     "typescript": "^5.0.2"
@@ -154,12 +154,7 @@
     "targets": [
       "commonjs",
       "module",
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
-        }
-      ]
+      "typescript"
     ]
   }
 }

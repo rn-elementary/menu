@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.authors      = package["author"]
 
   s.platforms    = { :ios => "14.0" }
-  s.source       = { :git => "https://github.com/ShivamRawat0l/react-native-picker-native.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/rn-elementary/menu.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 
@@ -38,5 +38,5 @@ Pod::Spec.new do |s|
     s.dependency "RCTTypeSafety"
     s.dependency "ReactCommon/turbomodule/core"
    end
-  end    
+  end
 end

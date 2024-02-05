@@ -1,7 +1,14 @@
 import * as React from 'react';
 
 import { Text, View } from 'react-native';
-import { PickerNativeView, usePickerLayout } from 'react-native-picker-native';
+import { PickerNativeView, usePickerLayout } from '@rn-elementary/menu';
+
+type PickerNativeOptions = {
+  nativeEvent: {
+    index: number;
+    title: string;
+  };
+};
 
 export default function App() {
   const { layout, onLayout } = usePickerLayout();
@@ -27,7 +34,7 @@ export default function App() {
           'Nine',
           'Ten',
         ]}
-        onSelect={(e) => {
+        onSelect={(e: PickerNativeOptions) => {
           console.log(e.nativeEvent.index);
           console.log(e.nativeEvent.title);
         }}
