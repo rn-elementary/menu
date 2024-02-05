@@ -19,13 +19,17 @@ class PickerNativeView: UIView {
 
     @objc var title: String = "" {
         didSet {
-            showMenu()
+            if self.options.count > 0 {
+                showMenu()
+            }
         }
     }
 
     @objc var options: [String] = [] {
         didSet {
-            showMenu()
+            if title != "" {
+                showMenu()
+            }
         }
     }
 
@@ -55,13 +59,11 @@ class PickerNativeView: UIView {
 
 
     func showMenu() {
-        var index = -1;
-        let actions = self.options.map({ string in
-            index += 1
-            return  UIAction(title: string, handler: { (_) in
-            if self.onSelect != nil {
-                self.onSelect!(["index": index,"title": string])
-            }
+        let actions = self.options.enumerated().map({ index,string in
+            return UIAction(title: string, handler: { action in
+                if self.onSelect != nil {
+                    self.onSelect!(["index": index,"title": action.title])
+                }
             })
         })
         let menu = UIMenu(title: title, children: actions)
