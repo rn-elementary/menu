@@ -22,7 +22,8 @@ Pod::Spec.new do |s|
     install_modules_dependencies(s)
   else
   s.dependency "React-Core"
-  :modular_headers => true
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
+
   # Don't install the dependencies when we run `pod install` in the old architecture.
   if ENV['RCT_NEW_ARCH_ENABLED'] == '1' then
     s.compiler_flags = folly_compiler_flags + " -DRCT_NEW_ARCH_ENABLED=1"
