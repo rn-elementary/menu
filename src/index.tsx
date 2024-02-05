@@ -1,9 +1,7 @@
-import React from 'react';
 import {
   requireNativeComponent,
   UIManager,
   Platform,
-  StyleSheet,
   type ViewStyle,
   type StyleProp,
 } from 'react-native';
@@ -16,7 +14,7 @@ const LINKING_ERROR =
 
 type PickerNativeProps = {
   style: StyleProp<ViewStyle>;
-  title: string;
+  title: string; // iOS Only
   options: (string | null)[];
   onSelect: (e: {
     nativeEvent: {
@@ -28,32 +26,12 @@ type PickerNativeProps = {
 
 const ComponentName = 'PickerNativeView';
 
-const PickerNative =
+export const PickerNative =
   UIManager.getViewManagerConfig(ComponentName) != null
     ? requireNativeComponent<PickerNativeProps>(ComponentName)
     : () => {
         throw new Error(LINKING_ERROR);
       };
 
-export const PickerNativeView = (props: PickerNativeProps) => {
-  const { style, title, options, onSelect } = props;
-  return (
-    <PickerNative
-      style={[style, styles.box]}
-      title={title}
-      options={options}
-      onSelect={onSelect}
-    />
-  );
-};
-
-const styles = StyleSheet.create({
-  box: {
-    flex: 1,
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-  },
-});
+export { usePickerLayout } from './hooks/usePickerLayout';
+export { PickerNativeView } from './PickerNativeView';

@@ -19,7 +19,6 @@ class PickerNativeView: UIView {
 
     @objc var title: String = "" {
         didSet {
-            print("897929", title)
             showMenu()
         }
     }
@@ -52,8 +51,6 @@ class PickerNativeView: UIView {
             button.trailingAnchor.constraint(equalTo: self.trailingAnchor)
 
         ])
-        button.backgroundColor = .blue
-
     }
 
 
@@ -61,7 +58,7 @@ class PickerNativeView: UIView {
         var index = -1;
         let actions = self.options.map({ string in
             index += 1
-            return   UIAction(title: string, handler: { (_) in
+            return  UIAction(title: string, handler: { (_) in
             if self.onSelect != nil {
                 self.onSelect!(["index": index,"title": string])
             }
