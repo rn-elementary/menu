@@ -1,6 +1,6 @@
 {
   "name": "@rn-elementary/menu",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Creates native picker in Swift UI and JetPack Compose",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
