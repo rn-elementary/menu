@@ -5,7 +5,8 @@ Creates native picker in UIKit and Kotlin.
 ## [npm](https://www.npmjs.com/package/@rn-elementary/menu)
 ## Demo
 
-https://github.com/ShivamRawat0l/rn-picker-native/assets/27425384/926dc0b4-6241-4a84-96b7-8a11f5b1c0de
+![Screen Recording Feb 5](https://github.com/rn-elementary/menu/assets/27425384/018edcd8-d7b7-4ae9-8b00-9298e6443f24)
+
 
 ## Motivation
 
